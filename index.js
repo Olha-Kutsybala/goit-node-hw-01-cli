@@ -18,22 +18,22 @@ async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case "list":
       const allContacts = await contacts.listContacts();
-      return console.table(allContacts);
+      console.table(allContacts);
       break;
 
     case "get":
       const oneContact = await contacts.getContactById(id);
-      return console.log(oneContact);
+      console.log(oneContact);
       break;
 
     case "add":
       const newContact = await contacts.addContact(name, email, phone);
-      return console.table(newContact);
+      console.table(newContact);
       break;
 
     case "remove":
       const removedContact = await contacts.removeContact(id);
-      return console.table(removedContact);
+      console.table(removedContact);
       break;
 
     default:
